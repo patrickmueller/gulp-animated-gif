@@ -1,6 +1,7 @@
 // through2 is a thin wrapper around node transform streams
 var through = require('through2');
 var gutil = require('gulp-util');
+var gm = require('gm');
 var PluginError = gutil.PluginError;
 
 // Consts
@@ -18,7 +19,7 @@ function gulpAnimatedGif(destFile) {
 	if (!destFile) {
 		throw new PluginError(PLUGIN_NAME, 'Missing dest-file.');
 	}
-	prefixText = new Buffer(prefixText); // allocate ahead of time
+	// prefixText = new Buffer(prefixText); // allocate ahead of time
 
 	// Creating a stream through which each file will pass
 	return through.obj(function(file, enc, cb) {
@@ -26,7 +27,7 @@ function gulpAnimatedGif(destFile) {
 			return cb(null, file);
 		}
 		if (file.isBuffer()) {
-			gutil.log('Buffer:' + file.basename);
+			gutil.log('Buffer: ' + file.path);
 		}
 		if (file.isStream()) {
 			gutil.log('Stream:' + file.basename);
