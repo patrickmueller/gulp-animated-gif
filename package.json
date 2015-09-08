@@ -1,0 +1,23 @@
+{
+  "name": "gulp-animated-gif",
+  "version": "0.0.1",
+  "description": "Creates an animated gif from separate images",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/patrickmueller/gulp-animated-gif.git"
+  },
+  "author": {
+    "name": "Cubera Solutions GmbH"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  },
+  "scripts": {},
+  "directories": {}
+}
